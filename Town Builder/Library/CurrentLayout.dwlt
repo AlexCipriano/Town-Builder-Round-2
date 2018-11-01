@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 442}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 54
+  controlID: 84
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 10
+  controlID: 27
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -314,23 +314,23 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4a0a0000
-    m_LastClickedID: 0
-    m_ExpandedIDs: becbfffff2ccffff38ceffff3acfffffe4cfffff9ad2ffff6ce3ffff76e4ffff84e7ffff88e8ffff58eaffffe6fbffff00000000
+    m_SelectedIDs: e6fbffff
+    m_LastClickedID: -1050
+    m_ExpandedIDs: ccaafeffe6fbffff00000000b60f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Camera
+      m_OriginalName: Camera
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -20494
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -411,21 +411,21 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Alex\Documents\Developer\Unity Games\Town Builder\Town
+  m_LastProjectPath: C:\Users\Alex\Documents\Developer\Unity Games\Town Builder\Town-Builder\Town
     Builder
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6a090000
-    m_LastClickedID: 2410
-    m_ExpandedIDs: 000000006a09000098090000e60d0000
+    m_SelectedIDs: 600a0000
+    m_LastClickedID: 2656
+    m_ExpandedIDs: 000000006209000090090000d00d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -453,7 +453,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006a09000098090000e60d0000
+    m_ExpandedIDs: 000000006209000090090000d00d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -613,14 +613,14 @@ MonoBehaviour:
     height: 259
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 20320.804883684767
+  lastFramingTime: 1011.6200204077253
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 32.38015, y: 15.865527, z: -10.3313465}
+    m_Target: {x: 5.767997, y: 3.5999537, z: 10.254916}
     speed: 2
-    m_Value: {x: 32.38015, y: 15.865527, z: -10.3313465}
+    m_Value: {x: 5.767997, y: 3.5999537, z: 10.254916}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -648,13 +648,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.37972322, y: -0.05902189, z: 0.024284996, w: -0.922896}
+    m_Target: {x: -0.33000585, y: -0.012145424, z: 0.004246612, w: -0.9438912}
     speed: 2
-    m_Value: {x: -0.37972322, y: -0.05902189, z: 0.024284996, w: -0.922896}
+    m_Value: {x: -0.33000585, y: -0.012145424, z: 0.004246612, w: -0.9438912}
   m_Size:
-    m_Target: 8.779395
+    m_Target: 22
     speed: 2
-    m_Value: 8.779395
+    m_Value: 22
   m_Ortho:
     m_Target: 0
     speed: 2

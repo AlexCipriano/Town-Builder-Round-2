@@ -5,6 +5,7 @@ using UnityEngine;
 public class Grid : MonoBehaviour {
 
 	[SerializeField] private float size = 5f;
+	public GameObject mainCamera;
 
 	public Vector3 GetGridPoint(Vector3 position) {
 		position -= transform.position;
