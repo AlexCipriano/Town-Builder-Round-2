@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_2_10;UNITY_2018_2;UNITY_2018;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_EVENT_QUEUE;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_2_10;UNITY_2018_2;UNITY_2018;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_EVENT_QUEUE;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;CROSS_PLATFORM_INPUT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
      <Compile Include="Assets\Main Menu\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Main Menu\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Main Menu\Scripts\ChangeColor.cs" />
@@ -64,7 +65,10 @@
      <Compile Include="Assets\Main Menu\Scripts\ScrollDetailTexture.cs" />
      <Compile Include="Assets\Main Menu\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Main Menu\Scripts\TiltWindow.cs" />
+     <Compile Include="Assets\scripts\AutoIntensity.cs" />
+     <Compile Include="Assets\scripts\BuildingStats.cs" />
      <Compile Include="Assets\scripts\Cameraturn.cs" />
+     <Compile Include="Assets\scripts\CurrencyHolder.cs" />
      <Compile Include="Assets\scripts\Grid.cs" />
      <Compile Include="Assets\scripts\loadSceneOnClick.cs" />
      <Compile Include="Assets\scripts\LookAtCamera.cs" />
@@ -72,9 +76,43 @@
      <Compile Include="Assets\scripts\Playermove.cs" />
      <Compile Include="Assets\scripts\QuitOnClick.cs" />
      <Compile Include="Assets\scripts\SelectOnInput.cs" />
+     <Compile Include="Assets\scripts\SetSunLight.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Camera\CameraController.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Camera\CameraOcclusionProtector.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\Animation\CharacterAnimator.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\Animation\IdleStateBehaviour.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\Character.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\Settings\GravitySettings.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\Settings\MovementSettings.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\Settings\RotationSettings.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\States\CharacterStateBase.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\States\GroundedCharacterState.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\States\ICharacterState.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\States\InAirCharacterState.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\States\JumpingCharacterState.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Extensions\ListExtensions.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Extensions\MathfExtensions.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\GameController.cs" />
+     <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\PlayerInput.cs" />
+     <Compile Include="Assets\Water\Scripts\Displace.cs" />
+     <Compile Include="Assets\Water\Scripts\GerstnerDisplace.cs" />
+     <Compile Include="Assets\Water\Scripts\MeshContainer.cs" />
+     <Compile Include="Assets\Water\Scripts\PlanarReflection.cs" />
+     <Compile Include="Assets\Water\Scripts\SpecularLighting.cs" />
+     <Compile Include="Assets\Water\Scripts\Water.cs" />
+     <Compile Include="Assets\Water\Scripts\WaterBase.cs" />
+     <Compile Include="Assets\Water\Scripts\WaterTile.cs" />
+     <None Include="Assets\Environment\Water (Basic)\DO_NOT_WORK_IN_VR.txt" />
      <None Include="Assets\Main Menu\Fonts\Jupiter\LICENSE.txt" />
+     <None Include="Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Main Menu\Textures and Sprites\SF UI\Background\LICENSE.txt" />
+     <None Include="Assets\Environment\Water\DO_NOT_WORK_IN_VR.txt" />
+     <None Include="Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Main Menu\Materials\UI-Default-No-Alpha.shader" />
+     <None Include="Assets\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+     <None Include="Assets\Unity-ThirdPersonController-master\ProjectSettings\ProjectVersion.txt" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/Alex/Documents/Developer/Unity Games/Town Builder/Town-Builder/Town Builder/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

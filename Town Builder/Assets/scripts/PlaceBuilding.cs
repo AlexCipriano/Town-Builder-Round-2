@@ -57,7 +57,7 @@ public class PlaceBuilding : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.E)) {
 			arrayCount++;
-			if (arrayCount > prefabArray.Length)
+			if (arrayCount > prefabArray.Length - 1)
 				arrayCount = 0;
 			placeableObjectPrefab = prefabArray [arrayCount];
 		}
