@@ -43,6 +43,7 @@ public class BattleStateMachine : MonoBehaviour {
 	public GameObject AbilitiesPanel;
 	public GameObject ItemsPanel;
 	public GameObject ActionButton;
+    public GameObject SpellButton;
 	private List<GameObject> DeleteButtons = new List<GameObject> ();
 
 
@@ -169,6 +170,23 @@ public class BattleStateMachine : MonoBehaviour {
 		HeroInput = HeroGUI.DONE;
 	}
 
+    public void ChooseMagic (BaseAttack chosenMagic)//Choose magic to cast
+    {
+        HeroChoice.Attacker = HeroesToManage[0].name;
+        HeroChoice.attackersObject = HeroesToManage[0];
+        HeroChoice.Type = "Hero";
+
+        HeroChoice.chosenAttack = chosenMagic;
+        MagicPanel.SetActive(false);
+        SelectEnemyPanel.SetActive(true);
+
+    }
+    public void MagicPanelSwitch()
+    {
+        ActionPanel.SetActive(false);
+        MagicPanel.SetActive(true);
+    }
+
 	public void HeroInputDone() {
 		turnOrder.Add (HeroChoice);
 		SelectEnemyPanel.SetActive (false);
@@ -192,10 +210,35 @@ public class BattleStateMachine : MonoBehaviour {
 		MenuButton.transform.SetParent (ActionSpacer, false);
 		DeleteButtons.Add (MenuButton);
 
-		GameObject MagicButton = Instantiate (ActionButton) as GameObject;
-		Text MagicButtonText = MagicButton.transform.Find ("Text").gameObject.GetComponent<Text> ();
-		MagicButtonText.text = "Magic";
-		MagicButton.transform.SetParent (ActionSpacer, false);
-		DeleteButtons.Add (MagicButton);
+		GameObject MagicAttackButton = Instantiate (ActionButton) as GameObject;
+		Text MagicAttackButtonText = MagicAttackButton.transform.Find ("Text").gameObject.GetComponent<Text> ();
+        MagicAttackButtonText.text = "Magic";
+        MagicAttackButton.GetComponent<Button>().onClick.AddListener(() => MagicPanelSwitch());
+        MagicAttackButton.transform.SetParent (ActionSpacer, false);
+		DeleteButtons.Add (MagicAttackButton);
+
+        //vairable for getcomponent
+        List<BaseAttack> heroMagicList = HeroesToManage[0].GetComponent<HeroStateMachine>().hero.MagicAttacks;
+
+        if (heroMagicList.Count > 0)
+        {
+            foreach(BaseAttack magAttack in heroMagicList)
+            {
+                GameObject spellButton = Instantiate(SpellButton) as GameObject;
+                Text spellButtonText = SpellButton.transform.Find("Text").gameObject.GetComponent<Text>();
+                spellButtonText.text = magAttack.attackName;
+
+                MagicButton magic = spellButton.GetComponent<MagicButton>();
+                magic.magicAttackToDo = magAttack;
+                magic.transform.SetParent(MagicSpacer, false);
+                DeleteButtons.Add(spellButton);
+
+            }
+        }
+        else
+        {
+            MagicAttackButton.GetComponent<Button>().interactable = false;
+        }
 	}
+
 }
