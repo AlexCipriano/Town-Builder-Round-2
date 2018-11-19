@@ -34,22 +34,22 @@ public static class PlayerInput
         return moveVector;
     }
 
-    public static Quaternion GetMouseRotationInput(float mouseSensitivity = 3f, float minTiltAngle = -75f, float maxTiltAngle = 45f)
+    public static Quaternion GetMouseRotationInput(float mouseSensitivity = 1f, float minTiltAngle = -75f, float maxTiltAngle = 45f)
     {
         //if (!Input.GetMouseButton(1))
         //{
         //    return;
         //}
 
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
+        float arrowLeft = Input.GetAxis("Horizontal");
+        float arrowRight = Input.GetAxis("Vertical");
 
         // Adjust the look angle (Y Rotation)
-        lookAngle += mouseX * mouseSensitivity;
+		lookAngle += arrowLeft * mouseSensitivity;
         lookAngle %= 360f;
 
         // Adjust the tilt angle (X Rotation)
-        tiltAngle += mouseY * mouseSensitivity;
+		tiltAngle += arrowRight * mouseSensitivity;
         tiltAngle %= 360f;
         tiltAngle = MathfExtensions.ClampAngle(tiltAngle, minTiltAngle, maxTiltAngle);
 

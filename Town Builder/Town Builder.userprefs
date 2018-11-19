@@ -1,18 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\Character.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\StateMachines\BattleStateMachine.cs">
     <Files>
-      <File FileName="Assets\scripts\LookAtCamera.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Grid.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\PlaceBuilding.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BuildingStats.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\CurrencyHolder.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\AutoIntensity.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\SetSunLight.cs" Line="1" Column="1" />
-      <File FileName="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\PlayerInput.cs" Line="58" Column="6" />
-      <File FileName="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\GameController.cs" Line="7" Column="2" />
-      <File FileName="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\States\GroundedCharacterState.cs" Line="13" Column="61" />
-      <File FileName="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\Character.cs" Line="214" Column="2" />
+      <File FileName="Assets\scripts\Attacks\MeleeAttacks\Slash.cs" Line="9" Column="60" />
+      <File FileName="Assets\scripts\Attacks\BaseAttack.cs" Line="11" Column="41" />
+      <File FileName="Assets\scripts\HandleTurns.cs" Line="14" Column="23" />
+      <File FileName="Assets\scripts\StateMachines\EnemyStateMachine.cs" Line="106" Column="14" />
+      <File FileName="Assets\scripts\BaseClasses\BaseClass.cs" Line="27" Column="1" />
+      <File FileName="Assets\scripts\StateMachines\HeroStateMachine.cs" Line="185" Column="42" />
+      <File FileName="Assets\scripts\StateMachines\BattleStateMachine.cs" Line="198" Column="48" />
+      <File FileName="Assets\scripts\UI parts\HeroPanelStats.cs" Line="12" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
