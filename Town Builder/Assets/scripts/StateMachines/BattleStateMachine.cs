@@ -219,7 +219,7 @@ public class BattleStateMachine : MonoBehaviour {
 
         //vairable for getcomponent
         List<BaseAttack> heroMagicList = HeroesToManage[0].GetComponent<HeroStateMachine>().hero.MagicAttacks;
-
+	
         if (heroMagicList.Count > 0)
         {
             foreach(BaseAttack magAttack in heroMagicList)
@@ -227,7 +227,6 @@ public class BattleStateMachine : MonoBehaviour {
                 GameObject spellButton = Instantiate(SpellButton) as GameObject;
                 Text spellButtonText = SpellButton.transform.Find("Text").gameObject.GetComponent<Text>();
                 spellButtonText.text = magAttack.attackName;
-
                 MagicButton magic = spellButton.GetComponent<MagicButton>();
                 magic.magicAttackToDo = magAttack;
                 magic.transform.SetParent(MagicSpacer, false);

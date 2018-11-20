@@ -66,6 +66,20 @@
      <Compile Include="Assets\Main Menu\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Main Menu\Scripts\TiltWindow.cs" />
      <Compile Include="Assets\scripts\Attacks\BaseAttack.cs" />
+     <Compile Include="Assets\scripts\Attacks\Black Magic\Blizzard.cs" />
+     <Compile Include="Assets\scripts\Attacks\Black Magic\Fire.cs" />
+     <Compile Include="Assets\scripts\Attacks\Black Magic\GigaBlizzard.cs" />
+     <Compile Include="Assets\scripts\Attacks\Black Magic\GigaFire.cs" />
+     <Compile Include="Assets\scripts\Attacks\Black Magic\GigaThunder.cs" />
+     <Compile Include="Assets\scripts\Attacks\Black Magic\GigaWater.cs" />
+     <Compile Include="Assets\scripts\Attacks\Black Magic\MegaBlizzard.cs" />
+     <Compile Include="Assets\scripts\Attacks\Black Magic\MegaFire.cs" />
+     <Compile Include="Assets\scripts\Attacks\Black Magic\MegaThunder.cs" />
+     <Compile Include="Assets\scripts\Attacks\Black Magic\MegaWater.cs" />
+     <Compile Include="Assets\scripts\Attacks\Black Magic\Poison.cs" />
+     <Compile Include="Assets\scripts\Attacks\Black Magic\Thunder.cs" />
+     <Compile Include="Assets\scripts\Attacks\Black Magic\Water.cs" />
+     <Compile Include="Assets\scripts\Attacks\MagicButton.cs" />
      <Compile Include="Assets\scripts\Attacks\MeleeAttacks\Slash.cs" />
      <Compile Include="Assets\scripts\BaseClasses\BaseClass.cs" />
      <Compile Include="Assets\scripts\BaseClasses\BaseEnemy.cs" />
@@ -124,9 +138,6 @@
      <None Include="Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\Unity-ThirdPersonController-master\ProjectSettings\ProjectVersion.txt" />
- <Reference Include="UnityEditor.StandardEvents">
- <HintPath>C:/Users/Alex/Documents/Developer/Unity Games/Town Builder/Town-Builder/Town Builder/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
- </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/Alex/Documents/Developer/Unity Games/Town Builder/Town-Builder/Town Builder/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
