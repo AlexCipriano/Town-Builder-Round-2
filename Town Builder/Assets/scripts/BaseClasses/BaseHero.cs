@@ -5,10 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class BaseHero: BaseClass{
 
-	public int strength;
-	public int spirit;
-	public int evasion;
-	public int magicEvasion;
+
 
     public List<BaseAttack> MagicAttacks = new List<BaseAttack>(); 
 }

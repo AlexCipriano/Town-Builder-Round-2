@@ -54,6 +54,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Editor\CharacterEditor.cs" />
+ <Reference Include="UnityEditor.StandardEvents">
+ <HintPath>C:/Users/Alex/Documents/Developer/Unity Games/Town Builder/Town-Builder/Town Builder/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/Alex/Documents/Developer/Unity Games/Town Builder/Town-Builder/Town Builder/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

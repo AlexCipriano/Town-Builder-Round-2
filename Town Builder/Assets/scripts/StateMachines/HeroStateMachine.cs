@@ -98,15 +98,20 @@ public class HeroStateMachine : MonoBehaviour {
 				battleStateMachine.SelectEnemyPanel.SetActive (false);
 
 				//remove the hero from the turnOrder
-				for (int i = 0; i < battleStateMachine.turnOrder.Count; i++) {
-					if (battleStateMachine.turnOrder [i].targetOfAttack == this.gameObject) {
-						battleStateMachine.turnOrder.Remove (battleStateMachine.turnOrder [i]);
+				if (battleStateMachine.herosInBattle.Count > 0) {
+					for (int i = 0; i < battleStateMachine.turnOrder.Count; i++) {
+						if (battleStateMachine.turnOrder [i].attackersObject == this.gameObject) {
+							battleStateMachine.turnOrder.Remove (battleStateMachine.turnOrder [i]);
+						}
+						if (battleStateMachine.turnOrder [i].targetOfAttack == this.gameObject) {
+							battleStateMachine.turnOrder [i].targetOfAttack = battleStateMachine.herosInBattle [Random.Range (0, battleStateMachine.herosInBattle.Count)];
+						}
 					}
 				}
 				//change color (or death animation)
 				this.gameObject.transform.rotation = Quaternion.Euler(90f, 90f, 0f);
 				//reset heroInput
-				battleStateMachine.HeroInput = BattleStateMachine.HeroGUI.ACTIVATE;
+				battleStateMachine.battleState = BattleStateMachine.PerformAction.CHECKALIVE;
 				alive = false;
 
 			}
@@ -138,6 +143,19 @@ public class HeroStateMachine : MonoBehaviour {
 		//wait for event
 		yield return new WaitForSeconds(0.5f);
 		//do damge
+		if (battleStateMachine.turnOrder [0].chosenAttack.type == BaseAttack.Type.ATTACK) {
+			Debug.Log ("Attacking");
+			DoAttackDamage ();
+		}
+		else if(battleStateMachine.turnOrder [0].chosenAttack.type == BaseAttack.Type.MAGIC) {
+			Debug.Log ("casting");
+			DoMagicDamage ();
+		} 
+		else {
+			Debug.Log ("Healing target");
+			HealTarget ();
+		}
+
 
 		//animate back to start
 		Vector3 firstPosition = startPosition;
@@ -146,14 +164,20 @@ public class HeroStateMachine : MonoBehaviour {
 		//remove this action from the list in the turnOrder
 		battleStateMachine.turnOrder.RemoveAt(0);
 		//reset the Battlestate to wait
-		battleStateMachine.battleState = BattleStateMachine.PerformAction.WAIT;
+		if (battleStateMachine.battleState != BattleStateMachine.PerformAction.WIN && battleStateMachine.battleState != BattleStateMachine.PerformAction.LOSE) {
+			//reset the enemy state 
+			battleStateMachine.battleState = BattleStateMachine.PerformAction.WAIT;
+			curCooldown = 0f;
+			actionBar.color = new Color32(0xD6, 0xD6, 0xD3, 0xFF);
+			currentState = Turnstate.WAITING;
+		} else {
+			currentState = Turnstate.IDLE;
+		}
 
 		//end coroutine
 		actionStarted = false;
-		//reset the enemy state 
-		curCooldown = 0f;
-		actionBar.color = new Color32(0xD6, 0xD6, 0xD3, 0xFF);
-		currentState = Turnstate.WAITING;
+
+
 	}
 
 	private bool MoveToEnemy(Vector3 target) {
@@ -163,7 +187,7 @@ public class HeroStateMachine : MonoBehaviour {
 		return target != (transform.position = Vector3.MoveTowards (transform.position, target, animSpeed * Time.deltaTime));
 	}
 
-	public void takeDamage (float getDamage) {
+	public void TakeDamage (float getDamage) {
 		hero.curHP -= getDamage;
 		if (hero.curHP <= 0) {
 			hero.curHP = 0;
@@ -185,5 +209,49 @@ public class HeroStateMachine : MonoBehaviour {
 		stats.HeroHP.text = "HP: " + hero.curHP;	
 	}
 
+	void DoAttackDamage(){
+		if (enemyToAttack.tag == "Enemy") {
+			float calcDamage = ((hero.curATK - enemyToAttack.GetComponent<EnemyStateMachine> ().Enemy.curDEF) * hero.strength);
+			float bonus = Random.Range (hero.strength, ((hero.level + hero.strength) / 8) + hero.strength);
+			float damage = calcDamage * bonus;
+			enemyToAttack.GetComponent<EnemyStateMachine> ().TakeDamage (damage);
+		}
+		else {
+				float calcDamage = ((hero.curATK - enemyToAttack.GetComponent<HeroStateMachine> ().hero.curDEF) * hero.strength);
+				float bonus = Random.Range (hero.strength, ((hero.level + hero.strength) / 8) + hero.strength);
+				float damage = calcDamage * bonus;
+				enemyToAttack.GetComponent<HeroStateMachine> ().TakeDamage (damage);
+			}
+	}
+	void DoMagicDamage() {
+		if (enemyToAttack.tag == "Enemy") {
+			float calcDamage = (battleStateMachine.turnOrder [0].chosenAttack.attackDamage - enemyToAttack.GetComponent<EnemyStateMachine> ().Enemy.curMAGD);
+			float bonus = Random.Range (hero.curMAG, ((hero.level + hero.curMAG) / 8) + hero.curMAG);
+			float damage = calcDamage * bonus;
+			enemyToAttack.GetComponent<EnemyStateMachine> ().TakeDamage (damage);
+		} else {
+			float calcDamage = (battleStateMachine.turnOrder [0].chosenAttack.attackDamage - enemyToAttack.GetComponent<HeroStateMachine> ().hero.curMAGD);
+			float bonus = Random.Range (hero.curMAG, ((hero.level + hero.curMAG) / 8) + hero.curMAG);
+			float damage = calcDamage * bonus;
+			enemyToAttack.GetComponent<HeroStateMachine> ().TakeDamage (damage);
+		}
+	}
+	void HealTarget() {
+		if (enemyToAttack.tag == "Enemy") {
+			float baseHeal = battleStateMachine.turnOrder [0].chosenAttack.attackDamage;
+			float bonus = Random.Range (hero.curMAG, ((hero.level + hero.curMAG) / 8) + hero.curMAG);
+			float HPRestored = baseHeal * bonus * -1;
+			if (enemyToAttack.GetComponent<EnemyStateMachine> ().Enemy.enemyType == BaseEnemy.Type.UNDEAD) {
+				HPRestored *= -1;
+			}
+			enemyToAttack.GetComponent<EnemyStateMachine> ().TakeDamage (HPRestored);
+		} 
+		else {
+			float baseHeal = battleStateMachine.turnOrder [0].chosenAttack.attackDamage;
+			float bonus = Random.Range (hero.curMAG, ((hero.level + hero.curMAG) / 8) + hero.curMAG);
+			float HPRestored = baseHeal * bonus * -1;
+			enemyToAttack.GetComponent<HeroStateMachine> ().TakeDamage (HPRestored);
+		}
+	}
 
 }

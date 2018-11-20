@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 492}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1768
     height: 910
-  m_MinSize: {x: 950, y: 492}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 442}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 14290
+  controlID: 39
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 14291
+  controlID: 140
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -288,7 +288,7 @@ MonoBehaviour:
     width: 637
     height: 419
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_MaximizeOnPlay: 1
+  m_MaximizeOnPlay: 0
   m_Gizmos: 1
   m_Stats: 0
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
@@ -473,9 +473,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 627affff
-    m_LastClickedID: -34206
-    m_ExpandedIDs: 627affff00000000e24f0000ea4f000014500000205000003250000044500000
+    m_SelectedIDs: 4298ffff
+    m_LastClickedID: 0
+    m_ExpandedIDs: e6fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -536,11 +536,11 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/UI
+    - Assets/Prefabs/Abilities/Magic/White Magic
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/UI
+  - Assets/Prefabs/Abilities/Magic/White Magic
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Alex\Documents\Developer\Unity Games\Town Builder\Town-Builder\Town
     Builder
@@ -548,9 +548,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6c4f0000
-    m_LastClickedID: 20332
-    m_ExpandedIDs: 00000000464a0000684a0000864a0000ac4a0000ec4a0000604b0000704b0000864c0000944d0000364e0000ac4e0000b04e0000c64e0000044f00001a4f0000864f0000925000009450000096500000786a0000
+    m_SelectedIDs: 70110000
+    m_LastClickedID: 4464
+    m_ExpandedIDs: 00000000000a0000260a0000560a0000960a0000260b0000e80b0000fe0b0000e80d0000980f0000d21000009c110000a0110000de1100004a1200007c1200003e130000cc380000ce380000d0380000d2380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -578,7 +578,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000464a0000684a0000864a0000ac4a0000ec4a0000604b0000704b0000864c0000944d0000364e0000ac4e0000b04e0000c64e0000044f00001a4f0000864f0000925000009450000096500000786a0000
+    m_ExpandedIDs: 00000000000a0000260a0000560a0000960a0000260b0000e80b0000fe0b0000e80d0000980f0000d21000009c110000a0110000de1100004a1200007c1200003e130000cc380000ce380000d0380000d2380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

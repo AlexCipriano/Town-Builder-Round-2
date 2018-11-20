@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class BaseEnemy: BaseClass {
 
+	public float EXP;
+	public float Money;
 
 	public enum Type {
 		NONE,
@@ -12,7 +14,8 @@ public class BaseEnemy: BaseClass {
 		FIRE,
 		WATER,
 		ELECTRIC,
-		RESISTALL
+		RESISTALL,
+		UNDEAD
 	}
 
 	public Type enemyType;

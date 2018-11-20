@@ -6,6 +6,7 @@ public class MegaBlizzard : BaseAttack {
 
     public MegaBlizzard()
     {
+		type = Type.MAGIC;
         attackName = "MegaBlizzard";
         attackDescription = "Moderate ice elemental damage to a single target";
         attackDamage = 29f;

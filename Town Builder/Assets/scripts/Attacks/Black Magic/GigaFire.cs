@@ -6,6 +6,7 @@ public class GigaFire : BaseAttack {
 
     public GigaFire()
     {
+		type = Type.MAGIC;
         attackName = "GigaFire";
         attackDescription = "Major fire elemental damage to a single target";
         attackDamage = 72f;

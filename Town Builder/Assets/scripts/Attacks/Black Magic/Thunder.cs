@@ -6,6 +6,7 @@ public class Thunder : BaseAttack {
 
     public Thunder()
     {
+		type = Type.MAGIC;
         attackName = "Thunder";
         attackDescription = "Minor thunder elemental damage to a single target";
         attackDamage = 14f;

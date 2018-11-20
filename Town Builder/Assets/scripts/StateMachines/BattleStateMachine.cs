@@ -8,7 +8,10 @@ public class BattleStateMachine : MonoBehaviour {
 	public enum PerformAction {
 		WAIT,
 		TAKEACTION,
-		PERFORMACTION
+		PERFORMACTION,
+		CHECKALIVE,
+		WIN,
+		LOSE
 	}
 	public PerformAction battleState;
 
@@ -45,6 +48,9 @@ public class BattleStateMachine : MonoBehaviour {
 	public GameObject ActionButton;
     public GameObject SpellButton;
 	private List<GameObject> DeleteButtons = new List<GameObject> ();
+
+	//enemy buttons
+	private List<GameObject> enemybtns = new List<GameObject>();
 
 
 
@@ -102,6 +108,32 @@ public class BattleStateMachine : MonoBehaviour {
 		case(PerformAction.PERFORMACTION):
 
 		break;
+
+		case(PerformAction.CHECKALIVE):
+			if (herosInBattle.Count < 1) {
+				battleState = PerformAction.LOSE;
+				//lose the battle
+			} 
+			else if (enemiesInBattle.Count < 1) {
+				battleState = PerformAction.WIN;
+				//win the battle
+			}
+			else {
+				//call function
+				clearActionPanel();
+				HeroInput = HeroGUI.ACTIVATE;
+			}
+		break;
+
+		case(PerformAction.WIN):
+			for (int i = 0; i < herosInBattle.Count; i++) {
+				herosInBattle [i].GetComponent<HeroStateMachine> ().currentState = HeroStateMachine.Turnstate.IDLE;
+			}
+		break;
+
+		case(PerformAction.LOSE):
+
+		break;
 		}
 
 
@@ -138,7 +170,15 @@ public class BattleStateMachine : MonoBehaviour {
 		turnOrder.Add (turn);
 	}
 
-	void EnemyButtons() {
+	public void EnemyButtons() {
+
+		//clean up 
+		foreach (GameObject enemyBtn in enemybtns) {
+			Destroy (enemyBtn);
+		}
+		enemybtns.Clear();
+
+		//create buttons
 		foreach (GameObject enemy in enemiesInBattle) {
 			GameObject newButton = Instantiate (enemyButton) as GameObject;
 			EnemySelectedButton button = newButton.GetComponent<EnemySelectedButton> ();
@@ -151,16 +191,30 @@ public class BattleStateMachine : MonoBehaviour {
 			button.EnemyPrefab = enemy;
 
 			newButton.transform.SetParent(spacer);
+			enemybtns.Add (newButton);
 
 		}
+		foreach (GameObject hero in herosInBattle) {
+			GameObject newButton = Instantiate (enemyButton) as GameObject;
+			EnemySelectedButton button = newButton.GetComponent<EnemySelectedButton> ();
+
+			HeroStateMachine curHero = hero.GetComponent<HeroStateMachine> ();
+
+			Text buttonText = newButton.transform.Find ("Text").gameObject.GetComponent<Text> ();
+			buttonText.text = curHero.hero.theName;
+			button.EnemyPrefab = hero;
+			newButton.transform.SetParent(spacer);
+			enemybtns.Add (newButton);
+		}
 	}
+
 
 	//attack button
 	public void HeroAttack() {
 		HeroChoice.Attacker = HeroesToManage [0].name;
 		HeroChoice.attackersObject = HeroesToManage [0];
 		HeroChoice.Type = "Hero";
-
+		HeroChoice.chosenAttack = HeroesToManage [0].GetComponent<HeroStateMachine> ().hero.AttackList [0];
 		ActionPanel.SetActive (false);
 		SelectEnemyPanel.SetActive (true);
 	}
@@ -189,17 +243,27 @@ public class BattleStateMachine : MonoBehaviour {
 
 	public void HeroInputDone() {
 		turnOrder.Add (HeroChoice);
-		SelectEnemyPanel.SetActive (false);
-
 		//clean attackpanel
+		clearActionPanel ();
+
+		HeroesToManage [0].transform.Find ("Selector").gameObject.SetActive (false);
+		HeroesToManage.RemoveAt (0);
+		HeroInput = HeroGUI.ACTIVATE;
+	}
+
+	void clearActionPanel() {
+		SelectEnemyPanel.SetActive (false);
+		ActionPanel.SetActive (false);
+		MagicPanel.SetActive (false);
+		ItemsPanel.SetActive (false);
+		AbilitiesPanel.SetActive (false);
+
 		foreach (GameObject DeleteButton in DeleteButtons) {
 			Destroy (DeleteButton);
 		}
 		DeleteButtons.Clear();
 
-		HeroesToManage [0].transform.Find ("Selector").gameObject.SetActive (false);
-		HeroesToManage.RemoveAt (0);
-		HeroInput = HeroGUI.ACTIVATE;
+
 	}
 
 	void CreateActionButtons () {

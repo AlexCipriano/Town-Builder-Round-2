@@ -22,10 +22,10 @@ MonoBehaviour:
     y: 30
     width: 1768
     height: 860
-  m_MinSize: {x: 917, y: 442}
+  m_MinSize: {x: 917, y: 421}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 14073
+  controlID: 4840
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -125,10 +125,10 @@ MonoBehaviour:
     y: 0
     width: 639
     height: 860
-  m_MinSize: {x: 202, y: 442}
-  m_MaxSize: {x: 4002, y: 8042}
+  m_MinSize: {x: 202, y: 421}
+  m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
-  controlID: 14074
+  controlID: 4841
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -277,8 +277,8 @@ MonoBehaviour:
     y: 420
     width: 639
     height: 440
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -336,9 +336,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1a69ffff
-    m_LastClickedID: -38630
-    m_ExpandedIDs: 627affff00000000e24f0000ea4f000014500000205000003250000044500000
+    m_SelectedIDs: 16f8ffff
+    m_LastClickedID: -2026
+    m_ExpandedIDs: bcfaffff0000000032360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -425,11 +425,11 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/UI
+    - Assets/scripts/BaseClasses
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/UI
+  - Assets/scripts/BaseClasses
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Alex\Documents\Developer\Unity Games\Town Builder\Town-Builder\Town
     Builder
@@ -437,9 +437,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6c4f0000
-    m_LastClickedID: 20332
-    m_ExpandedIDs: 00000000464a0000684a0000864a0000ac4a0000ec4a0000604b0000704b0000864c0000944d0000364e0000ac4e0000b04e0000c64e0000044f00001a4f0000864f0000925000009450000096500000786a0000
+    m_SelectedIDs: 3e320000
+    m_LastClickedID: 12862
+    m_ExpandedIDs: 00000000aa2b0000d02b0000002c0000402c0000d02c0000902d0000a62d0000902f00003e31000078320000423300004633000084330000f033000022340000e4340000c8390000ca390000cc390000ce390000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -467,7 +467,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000464a0000684a0000864a0000ac4a0000ec4a0000604b0000704b0000864c0000944d0000364e0000ac4e0000b04e0000c64e0000044f00001a4f0000864f0000925000009450000096500000786a0000
+    m_ExpandedIDs: 00000000aa2b0000d02b0000002c0000402c0000d02c0000902d0000a62d0000902f00003e31000078320000423300004633000084330000f033000022340000e4340000c8390000ca390000cc390000ce390000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -492,8 +492,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 1a69ffff
-    m_LastClickedInstanceID: -38630
+    m_SelectedInstanceIDs: 16f8ffff
+    m_LastClickedInstanceID: -2026
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 5c31000000000000
     m_RenameOverlay:

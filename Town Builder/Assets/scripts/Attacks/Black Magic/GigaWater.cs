@@ -6,6 +6,7 @@ public class GigaWater : BaseAttack {
 
     public GigaWater()
     {
+		type = Type.MAGIC;
         attackName = "GigaWater";
         attackDescription = "Major water elemental damage to a single target";
         attackDamage = 72f;

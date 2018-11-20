@@ -6,6 +6,7 @@ public class Water : BaseAttack {
 
     public Water()
     {
+		type = Type.MAGIC;
         attackName = "Water";
         attackDescription = "Minor water elemental damage to a single target";
         attackDamage = 14f;

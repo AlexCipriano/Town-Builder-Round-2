@@ -1,16 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\StateMachines\BattleStateMachine.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\StateMachines\HeroStateMachine.cs">
     <Files>
       <File FileName="Assets\scripts\Attacks\MeleeAttacks\Slash.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Attacks\BaseAttack.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Attacks\BaseAttack.cs" Line="14" Column="10" />
       <File FileName="Assets\scripts\HandleTurns.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\StateMachines\EnemyStateMachine.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BaseClasses\BaseClass.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\StateMachines\BattleStateMachine.cs" Line="222" Column="2" />
+      <File FileName="Assets\scripts\BaseClasses\BaseClass.cs" Line="31" Column="37" />
       <File FileName="Assets\scripts\UI parts\HeroPanelStats.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Attacks\MagicButton.cs" Line="15" Column="1" />
-      <File FileName="Assets\scripts\StateMachines\HeroStateMachine.cs" Line="6" Column="27" />
+      <File FileName="Assets\scripts\Attacks\MagicButton.cs" Line="11" Column="92" />
+      <File FileName="Assets\scripts\StateMachines\BattleStateMachine.cs" Line="285" Column="102" />
+      <File FileName="Assets\scripts\StateMachines\EnemyStateMachine.cs" Line="166" Column="51" />
+      <File FileName="Assets\scripts\StateMachines\HeroStateMachine.cs" Line="150" Column="8" />
+      <File FileName="Assets\scripts\Attacks\MeleeAttacks\RegularAttack.cs" Line="5" Column="39" />
+      <File FileName="Assets\scripts\BaseClasses\BaseHero.cs" Line="8" Column="2" />
+      <File FileName="Assets\scripts\BaseClasses\BaseEnemy.cs" Line="18" Column="9" />
+      <File FileName="Assets\scripts\Attacks\White Magic\Cure.cs" Line="14" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

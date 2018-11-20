@@ -6,6 +6,7 @@ public class Fire : BaseAttack {
 
     public Fire()
     {
+		type = Type.MAGIC;
         attackName = "Fire";
         attackDescription = "Minor fire elemental damage to a single target";
         attackDamage = 14f;

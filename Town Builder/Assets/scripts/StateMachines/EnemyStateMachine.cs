@@ -23,6 +23,7 @@ public class EnemyStateMachine : MonoBehaviour {
 	private float curCooldown = 0f;
 	private float maxCooldown;
 	public GameObject Selector;
+	public bool alive = true;
 
 	private Vector3 startPosition;
 
@@ -64,7 +65,37 @@ public class EnemyStateMachine : MonoBehaviour {
 			break;
 
 		case(Turnstate.DEAD): 
+			if (!alive) {
+				return;
+			} else {
+				//change tag of the enemy
+				this.gameObject.tag = "DeadEnemy";
+				//not attackable by a hero
+				battleStateMachine.enemiesInBattle.Remove(this.gameObject);
+				//deactivate the selector
+				Selector.SetActive(false);
+				//remove the enemy from the turnOrder
+				if (battleStateMachine.enemiesInBattle.Count > 0) {
+					for (int i = 0; i < battleStateMachine.turnOrder.Count; i++) {
+						if (battleStateMachine.turnOrder [i].attackersObject == this.gameObject) {
+							battleStateMachine.turnOrder.Remove (battleStateMachine.turnOrder [i]);
+						}
+						if (battleStateMachine.turnOrder [i].targetOfAttack == this.gameObject) {
+							battleStateMachine.turnOrder [i].targetOfAttack = battleStateMachine.enemiesInBattle [Random.Range (0, battleStateMachine.enemiesInBattle.Count)];
+						}
+					}
+				}
+				//change color (or death animation)
+				this.gameObject.transform.rotation = Quaternion.Euler(-90f, -90f, 0f);
+				//reset heroInput
+				battleStateMachine.battleState = BattleStateMachine.PerformAction.CHECKALIVE;
+				alive = false;
+				//reset buttons
+				battleStateMachine.EnemyButtons ();
+				//check alive
+				battleStateMachine.battleState = BattleStateMachine.PerformAction.CHECKALIVE;
 
+			}
 			break;
 		}
 	}
@@ -129,7 +160,17 @@ public class EnemyStateMachine : MonoBehaviour {
 	}
 
 	void DoDamage() {
-		float calcDamage = battleStateMachine.turnOrder [0].chosenAttack.attackDamage;
-		HeroToAttack.GetComponent<HeroStateMachine> ().takeDamage(calcDamage);
+		float baseDamage = (Enemy.curATK - HeroToAttack.GetComponent<HeroStateMachine> ().hero.curDEF) * Enemy.strength;
+		float bonus = Random.Range (Enemy.strength, ((Enemy.level + Enemy.strength) / 8) + Enemy.strength);
+		float damage = baseDamage * bonus;
+		HeroToAttack.GetComponent<HeroStateMachine> ().TakeDamage(damage);
+	}
+
+	public void TakeDamage(float getDamage) {
+		Enemy.curHP -= getDamage;
+		if (Enemy.curHP <= 0) {
+			Enemy.curHP = 0;
+			currentState = Turnstate.DEAD;
+		}
 	}
 }

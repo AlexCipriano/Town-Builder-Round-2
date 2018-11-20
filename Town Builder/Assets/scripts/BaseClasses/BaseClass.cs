@@ -9,6 +9,7 @@ public class BaseClass {
 	public float baseHP;
 	public float curHP;
 
+
 	public float baseMP;
 	public float curMP;
 
@@ -20,7 +21,12 @@ public class BaseClass {
 	public float curMAG;
 	public float baseMAGD;
 	public float curMAGD;
-	public float speed;
+	public int speed;
+	public int strength;
+	public int spirit;
+	public int evasion;
+	public int magicEvasion;
+	public int level;
 
 	public List<BaseAttack> AttackList;
 }
