@@ -1,24 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Camera\CameraController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\PlaceBuilding.cs">
     <Files>
-      <File FileName="Assets\scripts\Attacks\MeleeAttacks\Slash.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Attacks\BaseAttack.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\HandleTurns.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BaseClasses\BaseClass.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\UI parts\HeroPanelStats.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Attacks\MagicButton.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\StateMachines\BattleStateMachine.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\StateMachines\EnemyStateMachine.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\StateMachines\HeroStateMachine.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Attacks\MeleeAttacks\RegularAttack.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BaseClasses\BaseHero.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BaseClasses\BaseEnemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Attacks\White Magic\Cure.cs" Line="1" Column="1" />
+      <File FileName="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Camera\CameraController.cs" Line="41" Column="46" />
+      <File FileName="Assets\scripts\PlaceBuilding.cs" Line="163" Column="43" />
+      <File FileName="Assets\scripts\Skybox\SetSunLight.cs" Line="28" Column="25" />
+      <File FileName="Assets\scripts\CollisionHandler.cs" Line="9" Column="2" />
+      <File FileName="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\Character.cs" Line="8" Column="8" />
       <File FileName="Assets\scripts\UI parts\loadSceneOnClick.cs" Line="15" Column="45" />
-      <File FileName="Assets\scripts\UI parts\ChangeMainVolume.cs" Line="1" Column="1" />
-      <File FileName="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Character\Character.cs" Line="343" Column="1" />
-      <File FileName="Assets\Unity-ThirdPersonController-master\Assets\TP Controller\Scripts\Camera\CameraController.cs" Line="50" Column="60" />
+      <File FileName="Assets\scripts\GameManager.cs" Line="60" Column="1" />
+      <File FileName="Assets\scripts\StateMachines\BattleStateMachine.cs" Line="61" Column="81" />
+      <File FileName="Assets\scripts\LoadBattle.cs" Line="10" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

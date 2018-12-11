@@ -64,21 +64,28 @@ public class PlaceBuilding : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.LeftArrow)) {
 				offset = offsetLeft;
 				buildingCam.transform.rotation = Quaternion.Euler (30f, 90f, 0f);
+				currentPlaceableObject.transform.rotation = Quaternion.Euler (0f, 90f, 0f);
 				UpdateCamera ();
 			}
 			if (Input.GetKeyDown(KeyCode.RightArrow)) {
 				offset = offsetRight;
 				buildingCam.transform.rotation = Quaternion.Euler (30f, -90f, 0f);
+				currentPlaceableObject.transform.rotation = Quaternion.Euler (0f, -90f, 0f);
+
 				UpdateCamera ();
 			}
 			if (Input.GetKeyDown(KeyCode.UpArrow)) {
 				offset = offsetForward;
 				buildingCam.transform.rotation = Quaternion.Euler (30f, 180f, 0f);
+				currentPlaceableObject.transform.rotation = Quaternion.Euler (0f, 180f, 0f);
+
 				UpdateCamera ();
 			}
 			if (Input.GetKeyDown(KeyCode.DownArrow)) {
 				offset = offsetBack;
 				buildingCam.transform.rotation = Quaternion.Euler (30f, 0f, 0f);
+				currentPlaceableObject.transform.rotation = Quaternion.Euler (0f, 0f, 0f);
+
 				UpdateCamera ();
 			}
 
