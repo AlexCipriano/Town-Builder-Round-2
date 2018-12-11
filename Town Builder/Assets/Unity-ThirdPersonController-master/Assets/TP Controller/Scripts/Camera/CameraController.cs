@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
 
     // Serializable fields
     [SerializeField]
-    private Transform target = null; // The target to follow
+	public Transform target = null; // The target to follow
 
     [SerializeField]
     [Range(MIN_CATCH_SPEED_DAMP, MAX_CATCH_SPEED_DAMP)]
@@ -48,11 +48,10 @@ public class CameraController : MonoBehaviour
     }
 
     //public void SetDistanceToTarget(float distanceToTarget)
-    //{
-    //    Vector3 cameraTargetLocalPosition = Vector3.zero;
-    //    cameraTargetLocalPosition.z = -distanceToTarget;
-    //    this.transform.localPosition = cameraTargetLocalPosition;
-    //}
+      // Vector3 cameraTargetLocalPosition = Vector3.zero;
+     //  cameraTargetLocalPosition.z = -distanceToTarget;
+     //   this.transform.localPosition = cameraTargetLocalPosition;
+   // }
 
     private void FollowTarget()
     {
@@ -72,7 +71,7 @@ public class CameraController : MonoBehaviour
             this.rigTargetLocalRotation = Quaternion.Euler(0f, controlRotation.eulerAngles.y, 0f);
 
             // X Rotation (Tilt Rotation)
-            this.pivotTargetLocalRotation = Quaternion.Euler(controlRotation.eulerAngles.x, 0f, 0f);
+            //this.pivotTargetLocalRotation = Quaternion.Euler(controlRotation.eulerAngles.x, 0f, 0f);
 
             if (this.rotationSmoothing > 0.0f)
             {
@@ -81,10 +80,10 @@ public class CameraController : MonoBehaviour
 
                 this.rig.localRotation =
                     Quaternion.Slerp(this.rig.localRotation, this.rigTargetLocalRotation, this.rotationSmoothing * Time.deltaTime);
-            }
+           }
             else
-            {
-                this.pivot.localRotation = this.pivotTargetLocalRotation;
+           {
+               this.pivot.localRotation = this.pivotTargetLocalRotation;
                 this.rig.localRotation = this.rigTargetLocalRotation;
             }
         }

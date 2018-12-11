@@ -52,14 +52,24 @@ public class BattleStateMachine : MonoBehaviour {
 	//enemy buttons
 	private List<GameObject> enemybtns = new List<GameObject>();
 
+	//List of spawns
+	public List<Transform> spawnPoints = new List<Transform>();
+
+	void Awake(){
+		for (int i = 0; i < GameManager.instance.enemyAmount; i++) {
+			GameObject newEnemy = Instantiate(GameManager.instance.enemysToBattle [i], spawnPoints[i].position, Quaternion.Euler(0f,-90f,0f)) as GameObject;
+			newEnemy.name = newEnemy.GetComponent<EnemyStateMachine>().Enemy.theName + " " + (i + 1);
+			newEnemy.GetComponent<EnemyStateMachine> ().Enemy.theName = newEnemy.name;
+			enemiesInBattle.Add (newEnemy);
+		}
+	}
 
 
 
 	// Use this for initialization
 	void Start () {
 		battleState = PerformAction.WAIT;
-		enemiesInBattle.AddRange(GameObject.FindGameObjectsWithTag ("Enemy"));
-		Debug.Log (enemiesInBattle [0]);
+		//Debug.Log (enemiesInBattle [0]);
 		herosInBattle.AddRange(GameObject.FindGameObjectsWithTag ("Hero"));
 		HeroInput = HeroGUI.ACTIVATE;
 
@@ -129,6 +139,9 @@ public class BattleStateMachine : MonoBehaviour {
 			for (int i = 0; i < herosInBattle.Count; i++) {
 				herosInBattle [i].GetComponent<HeroStateMachine> ().currentState = HeroStateMachine.Turnstate.IDLE;
 			}
+
+			GameManager.instance.LoadSceneAfterBattleWin ();
+			GameManager.instance.enemysToBattle.Clear ();
 		break;
 
 		case(PerformAction.LOSE):

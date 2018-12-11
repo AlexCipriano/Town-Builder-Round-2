@@ -5,6 +5,7 @@ public class Character : MonoBehaviour
     // Serialized fields
     [SerializeField]
     private new Camera camera = null;
+	public Canvas zone1;
 
     [SerializeField]
     private MovementSettings movementSettings = null;
@@ -38,6 +39,11 @@ public class Character : MonoBehaviour
 
         this.IsJogging = true;
     }
+
+	public void Start() {
+		transform.position = GameManager.instance.nextHeroPosition;
+	}
+
 
     protected virtual void Update()
     {
@@ -355,4 +361,20 @@ public class Character : MonoBehaviour
 
         return false;
     }
+
+	public void OnTriggerEnter(Collider other) {
+		if (other.tag == "Enter Town") {
+			CollisionHandler colH = other.gameObject.GetComponent<CollisionHandler> (); 
+			GameManager.instance.nextHeroPosition =  new Vector3(0f, 0f, 0f);
+			GameManager.instance.LoadNextSceneByIndex (colH.ScenetoLoad);
+		}
+		if (other.tag == "Leave Town") {
+			CollisionHandler colH = other.gameObject.GetComponent<CollisionHandler> (); 
+			GameManager.instance.nextHeroPosition = new Vector3(0f, 0f, 0f);
+			GameManager.instance.LoadNextSceneByIndex (colH.ScenetoLoad);
+		}
+		if (other.tag == "Zone 1") {
+			zone1.gameObject.SetActive (true);
+		}
+	}
 }

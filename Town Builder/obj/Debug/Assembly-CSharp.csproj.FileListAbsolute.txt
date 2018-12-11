@@ -351,5 +351,3 @@ C:\Users\Alex\Documents\Developer\Unity Games\Town Builder\Town-Builder\Town Bui
 C:\Users\Alex\Documents\Developer\Unity Games\Town Builder\Town-Builder\Town Builder\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Alex\Documents\Developer\Unity Games\Town Builder\Town-Builder\Town Builder\obj\Debug\Assembly-CSharp.dll
 C:\Users\Alex\Documents\Developer\Unity Games\Town Builder\Town-Builder\Town Builder\obj\Debug\Assembly-CSharp.pdb
-C:\Users\Alex\Documents\Developer\Unity Games\Town Builder\Town-Builder\Town Builder\Temp\bin\Debug\UnityEditor.UI.dll
-C:\Users\Alex\Documents\Developer\Unity Games\Town Builder\Town-Builder\Town Builder\Temp\bin\Debug\UnityEditor.UI.xml

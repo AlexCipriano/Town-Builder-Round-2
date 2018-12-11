@@ -13,12 +13,19 @@ public class PlaceBuilding : MonoBehaviour
 	[SerializeField]
 	private Grid grid;
 	[SerializeField]
-	private GameObject mainCamera;
+	public Camera mainCamera;
+	public Camera buildingCam;
+	public Vector3 offset;
+	public Vector3 offsetBack;
+	public Vector3 offsetForward;
+	public Vector3 offsetLeft;
+	public Vector3 offsetRight;
+	public Vector3 tentoffest;
 
 	private GameObject currentPlaceableObject;
 
 	private float mouseWheelRotation;
-	private int arrayCount;
+	public int arrayCount;
 
 	public bool isBuildable = false;
 
@@ -36,15 +43,63 @@ public class PlaceBuilding : MonoBehaviour
 
 		if (currentPlaceableObject != null)
 		{
-			MoveCurrentObjectToMouse();
+
+
+			if (Input.GetKeyDown(KeyCode.A)) {
+				currentPlaceableObject.transform.position = currentPlaceableObject.transform.position + new Vector3 (-5f, 0f, 0f);
+				UpdateCamera ();
+			}
+			if (Input.GetKeyDown(KeyCode.D)) {
+				currentPlaceableObject.transform.position = currentPlaceableObject.transform.position + new Vector3 (5f, 0f, 0f);
+				UpdateCamera ();
+			}
+			if (Input.GetKeyDown(KeyCode.W)) {
+				currentPlaceableObject.transform.position = currentPlaceableObject.transform.position + new Vector3 (0f, 0f, 5f);
+				UpdateCamera ();
+			}
+			if (Input.GetKeyDown(KeyCode.S)) {
+				currentPlaceableObject.transform.position = currentPlaceableObject.transform.position + new Vector3 (0f, 0f, -5f);
+				UpdateCamera ();
+			}
+			if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+				offset = offsetLeft;
+				buildingCam.transform.rotation = Quaternion.Euler (30f, 90f, 0f);
+				UpdateCamera ();
+			}
+			if (Input.GetKeyDown(KeyCode.RightArrow)) {
+				offset = offsetRight;
+				buildingCam.transform.rotation = Quaternion.Euler (30f, -90f, 0f);
+				UpdateCamera ();
+			}
+			if (Input.GetKeyDown(KeyCode.UpArrow)) {
+				offset = offsetForward;
+				buildingCam.transform.rotation = Quaternion.Euler (30f, 180f, 0f);
+				UpdateCamera ();
+			}
+			if (Input.GetKeyDown(KeyCode.DownArrow)) {
+				offset = offsetBack;
+				buildingCam.transform.rotation = Quaternion.Euler (30f, 0f, 0f);
+				UpdateCamera ();
+			}
+
 			ReleaseIfClicked();
 		}
 	}
 
 	private void HandleNewObjectHotkey()
 	{
+		
 		if (Input.GetKeyDown (newObjectHotkey)) {
 			currentPlaceableObject = Instantiate (placeableObjectPrefab);
+			if (arrayCount == 0) {
+				currentPlaceableObject.transform.position = tentoffest;
+			} else {
+				currentPlaceableObject.transform.position = new Vector3 (0f, 2.5f, 0f);
+			}
+			buildingCam.enabled = true;
+			mainCamera.enabled = false;
+			buildingCam.gameObject.SetActive (true);
+			UpdateCamera ();
 		} 
 
 		if (Input.GetKeyDown (KeyCode.Q)) {
@@ -64,6 +119,8 @@ public class PlaceBuilding : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			Destroy (currentPlaceableObject);
+			buildingCam.enabled = false;
+			mainCamera.enabled = true;
 		}
 
 			
@@ -72,14 +129,10 @@ public class PlaceBuilding : MonoBehaviour
 
 	private void MoveCurrentObjectToMouse()
 	{
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		
 
-		RaycastHit hitInfo;
-		if (Physics.Raycast(ray, out hitInfo))
-		{
-			currentPlaceableObject.transform.position = PlaceBuildingNear(hitInfo.point);
-			currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
-		}
+
+
 	}
 		
 
@@ -88,6 +141,8 @@ public class PlaceBuilding : MonoBehaviour
 		if (Input.GetMouseButtonDown(0))
 		{
 			currentPlaceableObject = null;
+			buildingCam.enabled = false;
+			mainCamera.enabled = true;
 		}
 	}
 
@@ -95,6 +150,10 @@ public class PlaceBuilding : MonoBehaviour
 		var finalPosition = grid.GetGridPoint(near);
 		finalPosition += new Vector3 (0f, 2.5f, 0f);
 		return finalPosition;
+	}
+
+	private void UpdateCamera() { 
+		buildingCam.transform.position = Vector3.Lerp(buildingCam.transform.position,currentPlaceableObject.transform.position + offset, 10f );
 	}
 
 }

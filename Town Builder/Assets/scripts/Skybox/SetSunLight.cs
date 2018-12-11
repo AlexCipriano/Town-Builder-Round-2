@@ -6,7 +6,7 @@ public class SetSunLight : MonoBehaviour {
 	Material sky;
 
 	public Renderer water;
-
+	public Camera camera;
 	public Transform stars;
 	public Transform worldProbe;
 
@@ -25,7 +25,7 @@ public class SetSunLight : MonoBehaviour {
 
 		stars.transform.rotation = transform.rotation;
 
-		Vector3 tvec = Camera.main.transform.position;
+		Vector3 tvec = camera.transform.position;
 		worldProbe.transform.position = tvec;
 
 		water.material.mainTextureOffset = new Vector2(Time.time / 100, 0);
