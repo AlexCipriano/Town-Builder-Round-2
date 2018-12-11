@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject player;
 
 	public static GameManager instance;
+	public AudioClip battleMusic;
+	public AudioClip townMusic;
 
 	[System.Serializable]
 	public class RegionData {
@@ -55,9 +57,15 @@ public class GameManager : MonoBehaviour {
 	public void LoadSceneAfterBattleWin() {
 		regions [0].Exploration += 25;
 		SceneManager.LoadScene (lastScene);
+		MusicManager.Instance.MusicSource.Stop ();
+		MusicManager.Instance.MusicSource.clip = townMusic;
+		MusicManager.Instance.MusicSource.Play (); 
 	}
 	public void LoadSceneAfterBattleLose() {
 		SceneManager.LoadScene (1);
+		MusicManager.Instance.MusicSource.Stop ();
+		MusicManager.Instance.MusicSource.clip = townMusic;
+		MusicManager.Instance.MusicSource.Play ();
 	}
 
 	public void StartBattle(){
@@ -72,6 +80,9 @@ public class GameManager : MonoBehaviour {
 		lastScene = SceneManager.GetActiveScene ().buildIndex;
 		//Load Level
 		SceneManager.LoadScene(regions[0].BattleScene);
+		MusicManager.Instance.MusicSource.Stop ();
+		MusicManager.Instance.MusicSource.clip = battleMusic;
+		MusicManager.Instance.MusicSource.Play ();
 		
 	}
 
